@@ -1,0 +1,44 @@
+# Ignore Python artifacts
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+*.egg
+dist/
+build/
+
+# Virtual environments
+venv/
+env/
+.venv/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Environment
+.env
+.env.local
+
+# Docker
+Dockerfile
+docker-compose*.yml
+
+# Git
+.git/
+.gitignore
+
+# Documentation
+README.md
+*.md
+
+# Cloud Build
+cloudbuild.yaml
