@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+
+{% block title %}Gallery | Portfolio{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero">
+    <div class="hero-content">
+        <h1 class="hero-title">
+            <span class="title-line">Welcome to</span>
+            <span class="title-line title-accent">The Gallery</span>
+        </h1>
+        <p class="hero-subtitle">A curated collection of projects from my Master's program journey — where code meets creativity.</p>
+        <div class="hero-scroll">
+            <span>Explore</span>
+            <div class="scroll-indicator"></div>
+        </div>
+    </div>
+    <div class="hero-backdrop"></div>
+</section>
+
+<!-- Gallery Section -->
+<section class="gallery-section">
+    <div class="gallery-container">
+        <!-- Category Filter -->
+        <div class="gallery-filter">
+            <h2 class="section-label">Browse by Category</h2>
+            <div class="filter-buttons">
+                {% for category in categories %}
+                <button class="filter-btn {% if loop.first %}active{% endif %}" data-category="{{ category }}">
+                    {{ category }}
+                </button>
+                {% endfor %}
+            </div>
+        </div>
+
+        <!-- Exhibits Grid -->
+        <div class="exhibits-grid">
+            {% for exhibit in exhibits %}
+            <article class="exhibit-card" data-category="{{ exhibit.category }}">
+                <a href="{{ url_for('exhibit', exhibit_id=exhibit.id) }}" class="exhibit-link">
+                    <div class="exhibit-frame">
+                        <div class="exhibit-image">
+                            <img src="{{ url_for('static', filename='images/' + exhibit.image) }}" alt="{{ exhibit.title }}">
+                            <div class="exhibit-overlay">
+                                <span class="view-exhibit">View Exhibit</span>
+                            </div>
+                        </div>
+                        <div class="exhibit-status status-{{ exhibit.status|lower|replace(' ', '-') }}">
+                            {{ exhibit.status }}
+                        </div>
+                    </div>
+                    <div class="exhibit-info">
+                        <span class="exhibit-category">{{ exhibit.category }}</span>
+                        <h3 class="exhibit-title">{{ exhibit.title }}</h3>
+                        <p class="exhibit-description">{{ exhibit.description[:100] }}{% if exhibit.description|length > 100 %}...{% endif %}</p>
+                        <div class="exhibit-tech">
+                            {% for tech in exhibit.technologies[:3] %}
+                            <span class="tech-tag">{{ tech }}</span>
+                            {% endfor %}
+                            {% if exhibit.technologies|length > 3 %}
+                            <span class="tech-more">+{{ exhibit.technologies|length - 3 }}</span>
+                            {% endif %}
+                        </div>
+                    </div>
+                </a>
+            </article>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- Featured Quote -->
+<section class="quote-section">
+    <div class="quote-container">
+        <blockquote class="featured-quote">
+            <p>"Every project is a step forward in the journey of continuous learning."</p>
+        </blockquote>
+    </div>
+</section>
+{% endblock %}

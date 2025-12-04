@@ -1,0 +1,98 @@
+{% extends "base.html" %}
+
+{% block title %}About | Portfolio{% endblock %}
+
+{% block content %}
+<section class="about-section">
+    <div class="about-container">
+        <header class="about-header">
+            <h1 class="about-title">About the Artist</h1>
+            <p class="about-subtitle">The story behind the gallery</p>
+        </header>
+
+        <div class="about-content">
+            <div class="about-main">
+                <div class="about-intro">
+                    <p class="intro-text">
+                        Welcome to my digital gallery — a space where I showcase the projects and skills 
+                        I'm developing during my Master's program. Each exhibit represents a step in my 
+                        journey of continuous learning and growth.
+                    </p>
+                </div>
+
+                <div class="about-section-block">
+                    <h2 class="section-heading">The Journey</h2>
+                    <p>
+                        As a graduate student, I'm passionate about bridging the gap between theoretical 
+                        knowledge and practical application. This portfolio serves as both a showcase 
+                        and a reflection of my progress in areas like cloud architecture, data analytics, 
+                        and software development.
+                    </p>
+                </div>
+
+                <div class="about-section-block">
+                    <h2 class="section-heading">Technical Focus</h2>
+                    <div class="skills-grid">
+                        <div class="skill-category">
+                            <h3>Cloud & DevOps</h3>
+                            <ul>
+                                <li>Google Cloud Platform</li>
+                                <li>Cloud Run</li>
+                                <li>Docker & Containerization</li>
+                                <li>CI/CD Pipelines</li>
+                            </ul>
+                        </div>
+                        <div class="skill-category">
+                            <h3>Backend Development</h3>
+                            <ul>
+                                <li>Python</li>
+                                <li>Flask</li>
+                                <li>Django</li>
+                                <li>REST APIs</li>
+                            </ul>
+                        </div>
+                        <div class="skill-category">
+                            <h3>Data & Analytics</h3>
+                            <ul>
+                                <li>Pandas & NumPy</li>
+                                <li>Data Visualization</li>
+                                <li>Statistical Analysis</li>
+                                <li>Jupyter Notebooks</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="about-section-block">
+                    <h2 class="section-heading">The Gallery Concept</h2>
+                    <p>
+                        I designed this portfolio as a modern art gallery because I believe that 
+                        well-crafted code and thoughtful system design are forms of creative expression. 
+                        Each project is an "exhibit" — meant to be explored, understood, and appreciated 
+                        for both its technical merit and its contribution to solving real problems.
+                    </p>
+                </div>
+            </div>
+
+            <aside class="about-sidebar">
+                <div class="sidebar-card">
+                    <h3 class="sidebar-heading">Currently Exploring</h3>
+                    <ul class="exploration-list">
+                        <li>Cloud-native architectures</li>
+                        <li>Data engineering pipelines</li>
+                        <li>Machine learning applications</li>
+                        <li>Modern web development</li>
+                    </ul>
+                </div>
+                <div class="sidebar-card">
+                    <h3 class="sidebar-heading">Education</h3>
+                    <p class="education-text">
+                        Master's Program<br>
+                        <span class="education-detail">(Add your program details here)</span>
+                    </p>
+                </div>
+            </aside>
+        </div>
+    </div>
+</section>
+{% endblock %}
